@@ -1,0 +1,6 @@
+sudo apt-get update
+sudo apt-get install iptables-persistent -y
+sudo iptables -I INPUT -s 0.0.0.0/0 -p tcp --dport 9093 -j ACCEPT
+sudo iptables-save
+sudo netfilter-persistent save
+sudo netfilter-persistent reload
